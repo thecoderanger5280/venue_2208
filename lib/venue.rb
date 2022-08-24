@@ -28,4 +28,10 @@ class Venue
       @over_capacity = false
     end
   end
+
+  def kick_out
+    until(@patrons.length == @capacity) do
+      @patrons.pop
+    end
+  end
 end
