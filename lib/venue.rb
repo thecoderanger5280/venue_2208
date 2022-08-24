@@ -7,6 +7,7 @@ class Venue
     @capacity = capacity
     @patrons = []
     @patrons_caps = []
+    @over_capacity = false
   end
 
   def add_patron(patron)
@@ -18,5 +19,13 @@ class Venue
       @patrons_caps << patron.upcase
     end
     @patrons_caps
+  end
+
+  def venue_over_capacity?
+    if(@patrons.length > @capacity)
+      @over_capacity = true
+    else
+      @over_capacity = false
+    end
   end
 end
